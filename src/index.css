@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-white font-body;
+    background-image: linear-gradient(rgba(239,68,68,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(239,68,68,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    min-height: 100vh;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ef4444 #0a1118;
+  }
+
+  *::-webkit-scrollbar { width: 6px; }
+  *::-webkit-scrollbar-track { background: #0a1118; }
+  *::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 3px; }
+}
+
+@layer components {
+  .card {
+    @apply bg-dark-800 border border-dark-400 rounded-xl p-6;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-brand-500 hover:shadow-lg;
+  }
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 text-dark-900 font-display font-semibold
+           px-5 py-2.5 rounded-lg text-sm tracking-wider transition-all duration-200
+           hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-dark-600 hover:bg-dark-500 text-white border border-dark-400
+           hover:border-brand-500 font-body font-semibold px-5 py-2.5 rounded-lg
+           text-sm tracking-wider transition-all duration-200 active:scale-95;
+  }
+  .btn-danger {
+    @apply bg-red-900/30 hover:bg-red-800/50 text-red-400 border border-red-800
+           font-body font-semibold px-5 py-2.5 rounded-lg text-sm tracking-wider
+           transition-all duration-200 active:scale-95;
+  }
+  .input {
+    @apply w-full bg-dark-700 border border-dark-400 rounded-lg px-4 py-2.5
+           text-white font-body placeholder-dark-300 focus:outline-none
+           focus:border-brand-500 focus:ring-1 focus:ring-brand-500/50
+           transition-all duration-200 text-sm;
+  }
+  .label {
+    @apply block text-xs font-display tracking-widest text-dark-300 mb-1.5 uppercase;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-display
+           tracking-wider font-semibold;
+  }
+  .stat-card {
+    @apply card flex flex-col gap-1;
+  }
+  .glow-text {
+    text-shadow: 0 0 20px rgba(0, 229, 102, 0.5);
+  }
+  .section-title {
+    @apply font-display text-xl font-bold tracking-widest uppercase text-brand-400 glow-text;
+  }
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in;
+  }
+}
